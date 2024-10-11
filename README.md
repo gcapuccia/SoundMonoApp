@@ -45,9 +45,9 @@ Para detener el monitoreo, haz clic en el botón "Stop Monitoring".
 ## 👯‍♀️ Contribuciones
 ¡Las contribuciones son bienvenidas! Si deseas colaborar, por favor abre un issue o haz un pull request en el repositorio de GitHub.
 
-[!IMPORTANT]
-Licencia
-Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
+>[!IMPORTANT]
+>Licencia
+>Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
 
 ¡Eso es todo! Este README debería ser un buen punto de partida. Puedes ajustarlo según las necesidades específicas de tu proyecto. ¡Buena suerte!
 
