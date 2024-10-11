@@ -15,7 +15,7 @@ Conocimiento básico de Kotlin y Jetpack Compose.
 Dispositivo Android con Android 6.0 (Marshmallow) o superior.
 
 ## 🛠 Skills
-Javascript, HTML, CSS...
+KOTLIN COMPOSE
 
 ## Instalación
 Clona el repositorio:
