@@ -38,8 +38,8 @@ Para detener el monitoreo, haz clic en el botón "Stop Monitoring".
 
 
 >[!Important]
-## 👯‍♀️ Contribuciones
-¡Las contribuciones son bienvenidas! Si deseas colaborar, por favor abre un issue o haz un pull request en el repositorio de GitHub.
+>## 👯‍♀️ Contribuciones
+>¡Las contribuciones son bienvenidas! Si deseas colaborar, por favor abre un issue o haz un pull request en el repositorio de GitHub.
 
 >[!Caution]
 >Licencia
