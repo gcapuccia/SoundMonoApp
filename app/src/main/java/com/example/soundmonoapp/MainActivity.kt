@@ -27,12 +27,22 @@ import android.media.AudioFormat
 import android.media.AudioRecord
 import android.media.AudioTrack
 import android.media.MediaRecorder
+import android.net.Uri
 import android.os.Build
 import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.app.ActivityCompat
@@ -41,7 +51,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
-
 
 
 class MainActivity : ComponentActivity() {
@@ -70,15 +79,6 @@ class MainActivity : ComponentActivity() {
         AudioFormat.ENCODING_PCM_16BIT, bufferSize,
         AudioTrack.MODE_STREAM)
 
-    /*ANTERIOR SIN PERMISOS
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        if (checkAudioPermission()) {
-            setContent { MainScreen() }
-        } else {
-            requestAudioPermission()
-        }
-    }*/
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -110,7 +110,7 @@ class MainActivity : ComponentActivity() {
     private var isRecording = false
 
 
-    @Composable
+   /* @Composable
     fun MainScreen() {
         var isRecordingState by remember { mutableStateOf(false) }
         val coroutineScope = rememberCoroutineScope()
@@ -135,9 +135,66 @@ class MainActivity : ComponentActivity() {
                 Text(if (isRecordingState) "Stop Monitoring" else "Start Monitoring")
             }
         }
+    }*/
+
+    @Composable
+    fun MainScreen() {
+        var isRecordingState by remember { mutableStateOf(false) }
+        val coroutineScope = rememberCoroutineScope()
+        val context = LocalContext.current
+
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                "Audio Monitor",
+                fontSize = 30.sp,
+                color = Color.Blue,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            Button(onClick = {
+                isRecordingState = !isRecordingState
+                isRecording = isRecordingState // Actualiza la variable de clase
+                if (isRecordingState) {
+                    startAudioMonitoring(coroutineScope) // Pasa el CoroutineScope como parámetro
+                } else {
+                    stopAudioMonitoring()
+                }
+            }) {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_ear_listening),
+                    contentDescription = "Listen Icon",
+                    modifier = Modifier.size(24.dp)
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(if (isRecordingState) "Stop Monitoring" else "Start Monitoring")
+            }
+            Spacer(modifier = Modifier.height(24.dp))
+            Text(
+                text = "Visit our GitHub",
+                color = Color.Gray,
+                textDecoration = TextDecoration.Underline,
+                modifier = Modifier.clickable {
+                    val intent = Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("https://github.com/gcapuccia")
+                    )
+                    context.startActivity(intent)
+                }
+            )
+        }
     }
 
-    private fun startAudioMonitoring(coroutineScope: CoroutineScope) {
+
+
+
+        private fun startAudioMonitoring(coroutineScope: CoroutineScope) {
         audioRecorder.startRecording()
         audioPlayer.play()
         val audioBuffer = ShortArray(bufferSize)
