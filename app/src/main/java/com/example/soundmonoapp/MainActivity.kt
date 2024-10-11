@@ -1,7 +1,9 @@
 package com.example.soundmonoapp
 
+import AudioMonitorService
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -25,7 +27,9 @@ import android.media.AudioFormat
 import android.media.AudioRecord
 import android.media.AudioTrack
 import android.media.MediaRecorder
+import android.os.Build
 import androidx.activity.compose.setContent
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
 import androidx.compose.runtime.*
@@ -39,22 +43,7 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
 
-/*class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            SoundMonoAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    MainScreen()
-                }
-            }
-        }
-    }
-}*/
+
 class MainActivity : ComponentActivity() {
     private val sampleRate = 44100
     private val bufferSize = AudioRecord.getMinBufferSize(sampleRate,
@@ -81,6 +70,7 @@ class MainActivity : ComponentActivity() {
         AudioFormat.ENCODING_PCM_16BIT, bufferSize,
         AudioTrack.MODE_STREAM)
 
+    /*ANTERIOR SIN PERMISOS
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (checkAudioPermission()) {
@@ -88,7 +78,25 @@ class MainActivity : ComponentActivity() {
         } else {
             requestAudioPermission()
         }
+    }*/
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        if (checkAudioPermission()) {
+            setContent { MainScreen() }
+        } else {
+            requestAudioPermission()
+        }
+
+        // Iniciar el servicio
+        val serviceIntent = Intent(this, AudioMonitorService::class.java)
+        startForegroundService(serviceIntent)
     }
+
+
+
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 1 && grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
