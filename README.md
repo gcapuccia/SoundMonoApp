@@ -45,7 +45,8 @@ Para detener el monitoreo, haz clic en el botón "Stop Monitoring".
 >Licencia
 >Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
 
-¡Eso es todo! Este README debería ser un buen punto de partida. Puedes ajustarlo según las necesidades específicas de tu proyecto. ¡Buena suerte!
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 ## 🔗 Links
