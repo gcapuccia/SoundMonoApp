@@ -1,6 +1,12 @@
 ##                    SOUNDMONOAPP 👩‍💻
-Descripción
-SOUNDMONOAPP es una aplicación móvil diseñada para monitorear el audio capturado por el micrófono de tus auriculares y reproducirlo en tiempo real a través de los mismos auriculares. Esta funcionalidad permite escuchar directamente lo que el micrófono está captando, útil para diversas aplicaciones como pruebas de sonido, monitoreo ambiental, y más.
+
+>[!Tip]
+># Descripción
+>SOUNDMONOAPP es una aplicación móvil diseñada para monitorear el audio capturado por el micrófono de tus auriculares y reproducirlo en tiempo real a través de los mismos auriculares. Esta funcionalidad permite escuchar directamente lo que el micrófono está captando, >útil para diversas aplicaciones como pruebas de sonido, monitoreo ambiental, y más.
+
+>[!Tip]
+># Beneficios para la Comunidad con Pérdida Auditiva
+>SOUNDMONOAPP también es una herramienta valiosa para personas que no escuchan al 100%. Al permitir amplificar y monitorear el sonido en tiempo real, la aplicación puede mejorar la experiencia auditiva en diferentes entornos, facilitando una mayor integración y >comunicación.
 
 Características
 Monitoreo en tiempo real: Captura y reproduce el audio de inmediato.
@@ -45,7 +51,7 @@ Para detener el monitoreo, haz clic en el botón "Stop Monitoring".
 ## 👯‍♀️ Contribuciones
 ¡Las contribuciones son bienvenidas! Si deseas colaborar, por favor abre un issue o haz un pull request en el repositorio de GitHub.
 
->[!IMPORTANT]
+>[!Caution]
 >Licencia
 >Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
 
