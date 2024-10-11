@@ -22,7 +22,7 @@ Clona el repositorio:
 git clone https://github.com/tu_usuario/SOUNDMONOAPP.git
 Abre el proyecto en Android Studio.
 
-> [!NOTE]
+>[!NOTE]
 >Asegúrate de tener las siguientes dependencias en tu archivo build.gradle:
 >implementation "androidx.compose.ui:ui:1.3.0"
 >implementation "androidx.compose.ui:ui-tooling-preview:1.3.0"
@@ -50,3 +50,10 @@ Licencia
 Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
 
 ¡Eso es todo! Este README debería ser un buen punto de partida. Puedes ajustarlo según las necesidades específicas de tu proyecto. ¡Buena suerte!
+
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/gcapuccia)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/guido-capucciati)
+
+
