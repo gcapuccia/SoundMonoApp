@@ -24,21 +24,11 @@ Dispositivo Android con Android 6.0 (Marshmallow) o superior.
 KOTLIN COMPOSE
 
 ## Instalación
-Clona el repositorio:
-git clone https://github.com/tu_usuario/SOUNDMONOAPP.git
-Abre el proyecto en Android Studio.
-
 >[!NOTE]
->Asegúrate de tener las siguientes dependencias en tu archivo build.gradle:
->implementation "androidx.compose.ui:ui:1.3.0"
->implementation "androidx.compose.ui:ui-tooling-preview:1.3.0"
->implementation "androidx.activity:activity-compose:1.5.0"
+> Clona el repositorio:
+> git clone https://github.com/tu_usuario/SOUNDMONOAPP.git
+> Abre el proyecto en Android Studio.
 
-
-> [!NOTE]
-> Añade los permisos necesarios en tu archivo AndroidManifest.xml:
-> <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-> <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
 
 # Uso
 Abre la aplicación en tu dispositivo Android.
@@ -47,7 +37,7 @@ Haz clic en el botón "Start Monitoring" para comenzar a capturar y reproducir e
 Para detener el monitoreo, haz clic en el botón "Stop Monitoring".
 
 
-
+>[!Important]
 ## 👯‍♀️ Contribuciones
 ¡Las contribuciones son bienvenidas! Si deseas colaborar, por favor abre un issue o haz un pull request en el repositorio de GitHub.
 
