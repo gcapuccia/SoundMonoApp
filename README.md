@@ -36,9 +36,9 @@ Abre el proyecto en Android Studio.
 
 
 > [!NOTE]
->Añade los permisos necesarios en tu archivo AndroidManifest.xml:
-><uses-permission android:name="android.permission.RECORD_AUDIO"/>
-><uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+> Añade los permisos necesarios en tu archivo AndroidManifest.xml:
+> <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+> <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
 
 # Uso
 Abre la aplicación en tu dispositivo Android.
